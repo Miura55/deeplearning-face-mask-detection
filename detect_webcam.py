@@ -1,3 +1,4 @@
+"""Face Mask Detection for Webcam"""
 import cv2
 import numpy as np
 
@@ -17,7 +18,7 @@ def detect_face(image):
         image, (300, 300)), 1.0, (300, 300), (104.0, 177.0, 123.0))
     faceDetectModel.setInput(blob)
     detections = faceDetectModel.forward()
-    faces = []
+    detect_faces = []
     positions = []
     for i in range(0, detections.shape[2]):
         box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
@@ -28,9 +29,9 @@ def detect_face(image):
         # If confidence > 0.5, show box around face
         if (confidence > 0.5):
             face = image[startY:endY, startX:endX]
-            faces.append(face)
+            detect_faces.append(face)
             positions.append((startX, startY, endX, endY))
-    return faces, positions
+    return detect_faces, positions
 
 
 def preprocess(img_data):

@@ -1,3 +1,4 @@
+"""Face Mask Detection for image"""
 import cv2
 import numpy as np
 
