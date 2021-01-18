@@ -2,7 +2,6 @@
 import cv2
 import numpy as np
 
-sample_image = "examples/example_01.png"
 onnx_model_path = 'detector/face_mask_detector.onnx'
 prototxt_path = 'detector/deploy.prototxt'
 faceDetect_path = 'detector/res10_300x300_ssd_iter_140000.caffemodel'
