@@ -7,6 +7,27 @@ $ pip3 install -r requirements.txt
 ```
 
 ## How to Use
+## 環境構築
+### PCに直接セットアップ
+PCに直接インストールする場合はPython、Pipのセットアップをして以下のコマンドでインストールする(GPUを使う場合は別途GPUドライバ、CUDAのセットアップを行う)
+
+```
+pip3 install -r requirements.txt
+```
+
+### Docker(GPUが使えるUbuntuのみ)
+Docker、およびNvidia Dockerの実行環境を構築したうえで以下のコマンドでイメージのビルドを行う
+
+```
+docker compose build
+```
+以下のコマンドでコンテナを立ち上げる
+
+```
+docker compose up
+```
+
+出力に表示されている接続先のURLを確認する
 
 ### データセットの用意
 

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  jupyter:
+    build: 
+      context: .
+      shm_size: '2gb'
+    shm_size: '2gb'
+    runtime: nvidia
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/work
+    command: jupyter-notebook --allow-root --ip=0.0.0.0 
